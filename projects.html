@@ -27,6 +27,10 @@
             </div>
         </div>
 
+        <div id="progress">
+            <span id="progress-value">&#x1F815;</span>
+        </div>
+
         <div id="portfolio">
             <div class="container">
                 <h1 class="subtitle">Web and Mobile Apps</h1><br>
@@ -358,6 +362,29 @@
                 <p>Portfolio Copyright &copy; 2024 Portfolio Website - All rights reserved || Designed By: NANDUNI.<i class="fa-solid fa-heart"></i></p>
             </div>
         </div>
+
+        <script>
+            let calcScrollValue = () => {
+                let scrollProgress = document.getElementById("progress");
+                let progressValue = document.getElementById("progress-value");
+                let pos = document.documentElement.scrollTop;
+                let calcHeight =
+                    document.documentElement.scrollHeight -
+                    document.documentElement.clientHeight;
+                let scrollValue = Math.round((pos * 100) / calcHeight);
+                if (pos > 100) {
+                    scrollProgress.style.display = "grid";
+                } else {
+                    scrollProgress.style.display = "none";
+                }
+                scrollProgress.addEventListener("click", () => {
+                    document.documentElement.scrollTop = 0;
+                });
+                scrollProgress.style.background = `conic-gradient(#12f7ff ${scrollValue}%, #d7d7d7 ${scrollValue}%)`;
+            };
+            window.onscroll = calcScrollValue;
+            window.onload = calcScrollValue;
+        </script>
     </body>
         
 </html>
