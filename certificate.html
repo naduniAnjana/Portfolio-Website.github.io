@@ -30,101 +30,53 @@
         <div id="services">
             <div class="container">
                 <h1 class="subtitle">CERTIFICATES</h1>
-                <div class="services-list">
-                    <div>                      
-                        <p>Centre for Open & Distance Learning(CODL) program in Front-End Web Development</p>
-                            <br><br><span>University of Moratuwa</span></p>
-                    </div>
-                    <div>                     
-                        <p>Centre for Open & Distance Learning(CODL) program in Python for Beginners</p>
-                            <br><br><span>University of Moratuwa</span></p>
-                    </div>
-                    <div>                   
-                        <p>Centre for Open & Distance Learning(CODL) program in Server-side web programming</p>
-                            <br><br><span>University of Moratuwa</span></p>
-                    </div>
-                    <div>                  
-                        <p>Centre for Open & Distance Learning(CODL) program in Web Design for Beginners</p>
-                            <br><br><span>University of Moratuwa</span></p>
-                    </div>
-                    <div>                   
-                        <p>HackerRank certified Software Engineer Intern</p>
-                            <br><br><span>HackerRank</span></p>
-                    </div>
-                    <div>                   
-                        <p>HackerRank certified Java (Basic)</p>
-                            <br><br><span>HackerRank</span></p>
-                    </div>
-                    <div>                   
-                        <p>HackerRank certified JavaScript (Basic)</p>
-                            <br><br><span>HackerRank</span></p>
-                    </div>
-                    <div>                   
-                        <p>HackerRank certified Python (Basic)</p>
-                            <br><br><span>HackerRank</span></p>
-                    </div>
-                    <div>                   
-                        <p>HackerRank certified SQL (Basic)</p>
-                            <br><br><span>HackerRank</span></p>
-                    </div>
-                    <div>                   
-                        <p>HackerRank certified SQL (Intermediate)</p>
-                            <br><br><span>HackerRank</span></p>
-                    </div>
-                    
+                <div class="image-container">
+                    <div class="image"><img src="images/certificates/1.jpg" alt=""></div>
+                    <div class="image"><img src="images/certificates/2.jpg" alt=""></div>
+                    <div class="image"><img src="images/certificates/4.jpg" alt=""></div>
+                    <div class="image"><img src="images/certificates/5.jpg" alt=""></div>
+                    <div class="image"><img src="images/certificates/6.jpg" alt=""></div>
+                    <div class="image"><img src="images/certificates/7.jpg" alt=""></div>
+                    <div class="image"><img src="images/certificates/8.jpg" alt=""></div>
+                    <div class="image"><img src="images/certificates/9.jpg" alt=""></div>
+                    <div class="image"><img src="images/certificates/10.jpg" alt=""></div>
+                    <div class="image"><img src="images/certificates/50.jpg" alt=""></div>
+                    <div class="image"><img src="images/certificates/51.jpg" alt=""></div>
+                    <div class="image"><img src="images/certificates/52.jpg" alt=""></div>
+                    <div class="image"><img src="images/certificates/53.jpg" alt=""></div>
+                    <div class="image"><img src="images/certificates/54.jpg" alt=""></div>
+                    <div class="image"><img src="images/certificates/500.jpg" alt=""></div>
+                    <div class="image"><img src="images/certificates/501.jpg" alt=""></div>
+                    <div class="image"><img src="images/certificates/502.png" alt=""></div>
+                    <div class="image"><img src="images/certificates/503.jpg" alt=""></div>
+                    <div class="image"><img src="images/certificates/504.jpg" alt=""></div>
+                    <div class="image"><img src="images/certificates/505.jpg" alt=""></div>
+                    <div class="image"><img src="images/certificates/506.jpg" alt=""></div>
+                    <div class="image"><img src="images/certificates/700.jpg" alt=""></div>
+                </div>
 
-                    <div>                   
-                        <p>LinkedIn Certified HTML Forms AccessibilityLinkedIn Certified HTML Forms Accessibility</p>
-                            <br><br><span>LinkedIn</span></p>
-                    </div>
-                    <div>                   
-                        <p>LinkedIn Certified Java Data Structures</p>
-                            <br><br><span>LinkedIn</span></p>
-                    </div>
-                    <div>                   
-                        <p>LinkedIn Certified Learning Introduction to Dart</p>
-                            <br><br><span>LinkedIn</span></p>
-                    </div>
-                    <div>                   
-                        <p>LinkedIn Certified Learning REST APIs</p>
-                            <br><br><span>LinkedIn</span></p>
-                    </div>
-                    <div>                  
-                        <p>LinkedIn Certified Programming Foundations Algorithms</p>
-                            <br><br><span>LinkedIn</span></p>
-                    </div>
-
-                    <div>                  
-                        <p>Simplilearn Certified Introduction to Flutter</p>
-                            <br><br><span>Simplilearn</span></p>
-                    </div>
-
-                    <div>                  
-                        <p>Sololearn certified Introduction to C</p>
-                            <br><br><span>Sololearn</span></p>
-                    </div>
-                    <div>                  
-                        <p>Sololearn certified Introduction to HTML</p>
-                            <br><br><span>Sololearn</span></p>
-                    </div>
-                    <div>                  
-                        <p>Sololearn certified Introduction to Java</p>
-                            <br><br><span>Sololearn</span></p>
-                    </div>
-                    <div>                  
-                        <p>Sololearn certified Introduction to JavaScript</p>
-                            <br><br><span>Sololearn</span></p>
-                    </div>
-                    <div>                  
-                        <p>Sololearn certified SQL (Intermediate)</p>
-                            <br><br><span>Sololearn</span></p>
-                    </div>
+                <div class="popup-image">
+                    <span>&times;</span>
+                    <img src="images/certificates/1.jpg" alt="">
                 </div>
             </div>
             <div class="copyright">
                 <p>Portfolio Copyright &copy; 2023 Portfolio Website - All rights reserved || Designed By: NANDUNI.<i class="fa-solid fa-heart"></i></p>
             </div>
         </div>
+
+        <script>
+            document.querySelectorAll('.image-container img').forEach(image => {
+                image.onclick = () => {
+                    document.querySelector('.popup-image').style.display = 'block';
+                    document.querySelector('.popup-image img').src = image.getAttribute('src');
+                }
+            });
+
+            document.querySelector('.popup-image span').onclick = () => {
+                document.querySelector('.popup-image').style.display = 'none';
+            }
+        </script>
 
     </body>
         

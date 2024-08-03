@@ -145,51 +145,20 @@
         <div id="services">
             <div class="container">
                 <h1 class="subtitle">CERTIFICATES</h1>
-                <div class="services-list">
-                    <div>                      
-                        <p>Centre for Open & Distance Learning(CODL) program in Front-End Web Development</p>
-                            <br><br><span>University of Moratuwa</span></p>
-                    </div>
-                    <div>                     
-                        <p>Centre for Open & Distance Learning(CODL) program in Python for Beginners</p>
-                            <br><br><span>University of Moratuwa</span></p>
-                    </div>
-                    <div>                   
-                        <p>Centre for Open & Distance Learning(CODL) program in Server-side web programming</p>
-                            <br><br><span>University of Moratuwa</span></p>
-                    </div>
-                    <div>                  
-                        <p>Centre for Open & Distance Learning(CODL) program in Web Design for Beginners</p>
-                            <br><br><span>University of Moratuwa</span></p>
-                    </div>
-                    <div>                   
-                        <p>HackerRank certified Java (Basic)</p>
-                            <br><br><span>HackerRank</span></p>
-                    </div>
-
-                    <div>                   
-                        <p>LinkedIn Certified HTML Forms AccessibilityLinkedIn Certified HTML Forms Accessibility</p>
-                            <br><br><span>LinkedIn</span></p>
-                    </div>
-                    <div>                   
-                        <p>LinkedIn Certified Java Data Structures</p>
-                            <br><br><span>LinkedIn</span></p>
-                    </div>
-                    <div>                   
-                        <p>LinkedIn Certified Learning Introduction to Dart</p>
-                            <br><br><span>LinkedIn</span></p>
-                    </div>
-
-                    <a href="certificate.html" class="btn btn2">View all</a>
-                    <!-- <div>                   
-                        <p>LinkedIn Certified Learning REST APIs</p>
-                            <br><br><span>LinkedIn</span></p>
-                    </div>
-                    <div>                  
-                        <p>LinkedIn Certified Programming Foundations Algorithms</p>
-                            <br><br><span>LinkedIn</span></p>
-                    </div> -->
+                <div class="image-container">
+                    <div class="image"><img src="images/certificates/1.jpg" alt=""></div>
+                    <div class="image"><img src="images/certificates/2.jpg" alt=""></div>
+                    <div class="image"><img src="images/certificates/4.jpg" alt=""></div>
+                    <div class="image"><img src="images/certificates/5.jpg" alt=""></div>
+                    <div class="image"><img src="images/certificates/6.jpg" alt=""></div>
+                    <div class="image"><img src="images/certificates/7.jpg" alt=""></div>
                 </div>
+
+                <div class="popup-image">
+                    <span>&times;</span>
+                    <img src="images/certificates/1.jpg" alt="">
+                </div>
+                <a href="certificate.html" class="btn btn3">View all</a>
             </div>
         </div>
 
@@ -303,20 +272,33 @@
             const scriptURL = 'https://script.google.com/macros/s/AKfycbwIK1QicQZ1YD2bwOkGCYJN46cNJH-BPuHFl49pn_xIRz7Ta9IrVswgIbGxrJs4Zwaz3g/exec'
             const form = document.forms['submit-to-google-sheet']
             const msg = document.getElementById("msg")
-            
+
             form.addEventListener('submit', e => {
                 e.preventDefault()
-                fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                .then(response => {
-                    msg.innerHTML = "Message sent successfully"
-                    setTimeout(function() {
-                        msg.innerHTML = ""
-                    }, 5000)
-                    form.reset()
-                })
-                .catch(error => console.error('Error!', error.message))
-    })
-  </script>
+                fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                    .then(response => {
+                        msg.innerHTML = "Message sent successfully"
+                        setTimeout(function () {
+                            msg.innerHTML = ""
+                        }, 5000)
+                        form.reset()
+                    })
+                    .catch(error => console.error('Error!', error.message))
+            });
+        </script>
+
+        <script>
+            document.querySelectorAll('.image-container img').forEach(image => {
+                image.onclick = () => {
+                    document.querySelector('.popup-image').style.display = 'block';
+                    document.querySelector('.popup-image img').src = image.getAttribute('src');
+                }
+            });
+
+            document.querySelector('.popup-image span').onclick = () => {
+                document.querySelector('.popup-image').style.display = 'none';
+            }
+        </script>
 
     </body>
 </html>
